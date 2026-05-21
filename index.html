@@ -128,6 +128,18 @@ body{
     color:#ddd;
 }
 
+/* زر العين */
+.toggle{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    color:white;
+    font-size:18px;
+    user-select:none;
+}
+
 button{
     width:100%;
     padding:15px;
@@ -170,6 +182,7 @@ button:hover{
 
     <div class="input-box">
         <input type="password" id="password" placeholder="Password">
+        <span class="toggle" onclick="togglePassword()">👁</span>
     </div>
 
     <button onclick="login()">دخول</button>
@@ -179,6 +192,19 @@ button:hover{
 </div>
 
 <script>
+
+// إظهار وإخفاء الباسورد
+function togglePassword(){
+
+    let pass = document.getElementById("password");
+
+    if(pass.type === "password"){
+        pass.type = "text";
+    }else{
+        pass.type = "password";
+    }
+
+}
 
 function login(){
 
